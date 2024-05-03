@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:notes_app/Utils/utils.dart';
 import 'package:notes_app/screens/auth/login_screen.dart';
+import 'package:notes_app/screens/notes_screen.dart';
 import 'package:notes_app/widgets/round_button.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -119,6 +120,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
               onTap: () {
                 if (_formKey.currentState!.validate()) {
                   signUp();
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NotesScreen(),
+                      ));
                 }
               },
             ),
